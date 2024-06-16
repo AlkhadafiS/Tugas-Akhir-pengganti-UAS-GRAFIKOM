@@ -1,0 +1,332 @@
+/* utama */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body */
+body {
+    min-height: 100vh;
+    background: #0c192c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+/* kontainer utama */
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* efek gelembung */
+.bubbles {
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* nama lengkap ketika di hover */
+#typed-name:hover {
+    color: #ff8;
+    cursor: pointer; 
+}
+
+/* gelembung */
+.bubbles span {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #4fc3dc;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #4fc3dc44,
+                0 0 50px #4fc3dc,
+                0 0 100px #4fc3dc;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(125s / var(--i));
+}
+
+/* gelembung */
+.bubbles span:nth-child(even) {
+    background: #ff2d75;
+    box-shadow: 0 0 0 10px #ff2d7544,
+                0 0 50px #ff2d75,
+                0 0 100px #ff2d75;
+}
+
+/* animasi gelembung */
+@keyframes animate {
+    0% {
+        transform: translateY(100vh) scale(0);
+    }
+    100% {
+        transform: translateY(-10vh) scale(1);
+    }
+}
+
+/* gedung gedung */
+.buildings {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    z-index: -2;
+}
+
+/* gedung */
+.building {
+    width: 100px;
+    height: 300px;
+    background: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* lantai gedung */
+.floor {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+/* lantai gedung */
+.floor span {
+    width: 20px;
+    height: 20px;
+    background: yellow;
+}
+
+/* text ditengah */
+.centered-text {
+    font-weight: bold;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3em;
+    text-align: center;
+}
+
+/* portfolio */
+.porto{
+    font-weight: bold;
+    font-size: 40%;
+    text-align: center;
+}
+
+/* icon icon */
+.icons {
+    margin-top: 5%;
+    display: flex;
+    gap: 10px;
+    justify-content: space-evenly;
+}
+
+/* icon 1*/
+.icon-1 {
+    width: 50px;
+    height: auto;
+    cursor: pointer;
+}
+
+/* icon 1*/
+.icon-2 {
+    width: 50px;
+    height: auto;
+}
+
+/* typed name di type.js */
+#typed-name {
+    font-weight: bold;
+}
+
+/* jalan raya */
+.road {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: #444;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* garis putus putus */
+.dashed-line {
+    width: 100%;
+    height: 4px;
+    background: repeating-linear-gradient(
+        to right,
+        yellow 0%,
+        yellow 5%,
+        transparent 5%,
+        transparent 10%
+    );
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* mobil 1 */
+.car {
+    position: absolute;
+    bottom: 10px;
+    left: 100%;
+    width: 100px;
+    height: auto;
+    animation: drive 10s linear infinite;
+}
+
+/* mobil 2 */
+.car2 {
+    position: absolute;
+    bottom: 45px;
+    right: 100%;
+    width: 100px;
+    height: auto;
+    animation: drive2 10s linear infinite;
+}
+
+/* animasi jalan mobil 1 */
+@keyframes drive {
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: -100px;
+    }
+}
+
+/* animasi jalan mobil 2 */
+@keyframes drive2 {
+    0% {
+        right: 100%;
+    }
+    100% {
+        right: -100px;
+    }
+}
+
+/* lampu jalan */
+.lamp-post {
+    position: relative;
+    width: 40px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 0 20px;
+}
+
+/* lampu */
+.light {
+    width: 20px;
+    height: 20px;
+    background: #ff8;
+    border-radius: 50%;
+    box-shadow: 0 0 20px 5px #ff8;
+    position: absolute;
+    top: 130px;
+}
+
+/* tiang lampu */
+.post {
+    width: 4px;
+    height: 50px;
+    background: #073d54;
+    position: absolute;
+    bottom: 0;
+}
+
+/* satelit bumi */
+.satelite {
+    position: relative;
+    width: 40px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 0 20px;
+    
+}
+
+/* bulan purnama */
+.moon {
+    width: 100px;
+    height: 100px;
+    background: #ff8;
+    border-radius: 50%;;
+    position: absolute;
+    margin-bottom: 45vh;
+    cursor: pointer;
+    transition: clip-path 0.5s ease;
+}
+
+/* bulan sabit */
+.moon.crescent {
+    position: relative;
+    margin-right: 6.7vh;
+    margin-bottom: 46.2vh;
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 25px 10px 0px 0px #ff8;
+}
+
+/* bulan sabit */
+.moon.crescent::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: -25px 10px 0px 0px #ff8;
+}
+
+/* bulan setengah */
+.moon.half {
+    position: relative;
+    margin-left: 15px;
+    margin-bottom: 46.2vh;
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 90px 10px 0px 0px tr;
+}
+
+/* bulan setengah */
+.moon.half::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: -45px 10px 0px 0px #ff8;
+}
